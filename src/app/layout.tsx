@@ -1,8 +1,10 @@
+import Navbar from "@/components/ui/layouts/Navbar";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Epilogue } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const eplogue = Epilogue({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${eplogue.className} relative overflow-x-hidden`}>
+        <Navbar />
+          <main>
+            <div className="w-full h-screen absolute top-0 -z-10"></div>
+            <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
+              <Image 
+                src="/images/pattern.png"  
+                alt="/images/pattern.png" 
+                fill
+              />
+            </div>
+            {children}
+          </main>
+        </body>
     </html>
   );
 }
