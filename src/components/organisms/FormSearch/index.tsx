@@ -29,12 +29,10 @@ const FormSearch: FC<FormSearchProps> = ({}) => {
           <SlLocationPin className="w-6 h-6" />
           <Select>
             <SelectTrigger className="w-[220px]">
-              <SelectValue placeholder="Theme" />
+              <SelectValue placeholder="Region" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="light">Indonesian</SelectItem>
             </SelectContent>
           </Select>
         </div>
