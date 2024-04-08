@@ -1,4 +1,5 @@
-import Navbar from "@/components/ui/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
+import Navbar from "@/components/layouts/Navbar";
 import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import Image from "next/image";
@@ -20,18 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${eplogue.className} relative overflow-x-hidden`}>
         <Navbar />
-          <main>
-            <div className="w-full h-screen absolute top-0 -z-10"></div>
-            <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
-              <Image 
-                src="/images/pattern.png"  
-                alt="/images/pattern.png" 
-                fill
-              />
-            </div>
-            {children}
-          </main>
-        </body>
+        <main>
+          <div className="w-full h-screen absolute top-0 -z-10"></div>
+          <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
+            <Image src="/images/pattern.png" alt="/images/pattern.png" fill />
+          </div>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
